@@ -10,12 +10,19 @@ import java.util.List;
 
 @Service
 public class PostService {
-    public List<Post> listAllPosts() {
-        List<Post> list = new ArrayList<Post>();
+    List<Post> posts = new ArrayList<Post>();
+    public PostService() {
         for (int i = 1; i<= 3; i++) {
             Post post = new Post("Text " + i, new Date());
-            list.add(post);
+            posts.add(post);
         }
-        return list;
+    }
+
+    public List<Post> listAllPosts() {
+        return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
     }
 }

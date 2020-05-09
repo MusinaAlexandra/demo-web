@@ -11,9 +11,10 @@ import java.util.List;
 @Service
 public class PostService {
     List<Post> posts = new ArrayList<Post>();
+
     public PostService() {
         for (int i = 1; i<= 3; i++) {
-            Post post = new Post("Text " + i, new Date());
+            Post post = new Post((long) posts.size(),"Text " + i, new Date());
             posts.add(post);
         }
     }
@@ -23,6 +24,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post((long) posts.size(), text, new Date()));
     }
 }

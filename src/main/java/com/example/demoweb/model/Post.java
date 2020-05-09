@@ -7,7 +7,9 @@ public class Post {
     private String text;
     private Integer likes = 0;
     private Date creationDate;
-    private Long id;
+
+    public Post() {
+    }
 
     public Post(Long id, String text, Date creationDate) {
         this.text = text;
